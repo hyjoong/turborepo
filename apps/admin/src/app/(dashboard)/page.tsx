@@ -1,9 +1,5 @@
-const HomePage = () => {
-  return (
-    <div>
-      <h1>Dashboard</h1>
-    </div>
-  );
-};
+import { UserButton } from "@clerk/nextjs";
 
-export default HomePage;
+export default function Home() {
+  return <UserButton afterSwitchSessionUrl='/' />;
+}
