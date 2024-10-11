@@ -9,6 +9,9 @@ module.exports = {
     "prettier",
     require.resolve("@vercel/style-guide/eslint/next"),
     "turbo",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
   ],
   globals: {
     React: true,
@@ -18,13 +21,37 @@ module.exports = {
     node: true,
     browser: true,
   },
-  plugins: ["only-warn"],
+  plugins: ["only-warn", "import"],
   settings: {
     "import/resolver": {
       typescript: {
         project,
       },
     },
+  },
+  rules: {
+    "import/order": [
+      "warn",
+      {
+        groups: [
+          ["builtin", "external"],
+          ["internal", "parent", "sibling", "index"],
+        ],
+        pathGroups: [
+          {
+            pattern: "next/**",
+            group: "external",
+            position: "before",
+          },
+        ],
+        pathGroupsExcludedImportTypes: ["builtin"],
+        "newlines-between": "always",
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
+      },
+    ],
   },
   ignorePatterns: [
     // Ignore dotfiles
