@@ -1,0 +1,43 @@
+---
+title: 퀴즈 풀기
+description: 오픈 API 퀴즈 데이터를 활용한 퀴즈풀기 프로젝트
+date: 2023-01 ~ 2023-01
+skills: ["Next.js", "Typescript", "i18n", "Jest"]
+thumbnail: images/thumbnail/quiz.png
+repository: https://github.com/hyjoong/quiz-app
+team: 개인 프로젝트 (프론트 1명)
+published: true
+---
+
+> # 프로젝트 소개
+
+서비스 주소: https://quizs-app.vercel.app
+
+이 프로젝트는 [퀴즈 Open API](https://opentdb.com/api_config.php)를 활용하여 다양한 카테고리의 퀴즈 문제를 풀 수 있는 서비스입니다.
+
+프로젝트의 주요 목표는 실제 사용자들이 퀴즈를 푸는 것보다, 기술적인 학습에 중점을 두고 i18n, Nivo, Jest 등의 기술을 실습하는 것 이였습니다.
+특히 국제화(i18n) 기술을 적용하여 영어와 한국어를 지원하는 랜딩 페이지를 구현하며 i18n기술을 익히고, Jest를 활용하여 유닛 테스트를 작성하며 테스트 코드에 익숙해지는 것을 목표로 했습니다.
+
+작성한 테스트 코드 중 대표적인 예는 [Quiz 페이지 테스트코드](https://github.com/hyjoong/quiz-app/blob/master/__tests__/quiz.test.jsx)이며, 스타일 테스트 코드 작성에 어려움을 겪어 Stitches CSS [Discussion](https://github.com/stitchesjs/stitches/discussions/800#discussioncomment-4755765)에 질문글을 올리면서 다른 개발자들과 소통하였습니다.
+
+> # 데모 영상
+
+![퀴즈풀기 데모](https://github.com/hyjoong/quiz-app/assets/70426440/6de584d3-0c9d-4e61-af72-6afcbb16749d)
+
+> # 프로젝트를 통한 학습 및 성장
+
+## 1. 오픈소스 기여
+
+결과 페이지에서 정답 수와 오답 수를 나타낼 파이차트를 구현할 때, Nivo/pie 라이브러리 코드를 분석하는 과정에서 테스트 코드 부분이 `// @todo` 로 표시된 것을 발견하였습니다.
+이에 기여하기 위해 직접 테스트코드를 작성하여 Nivo의 GitHub 저장소의 PR을 제출하였고, 머지되어 오픈소스 프로젝트에 기여한 경험을 얻었습니다. [(PR)](https://github.com/plouc/nivo/pull/2338)
+
+## 2. Next.js Discussion 커뮤니티 기여
+
+Next.js의 i18n 적용 문제를 해결하는 과정에서 얻은 방법을 Next.js Discussion 페이지에 공유하여, 나와 같은 문제를 겪고 있는 다른 사용자들이 해결 방법을 쉽게 찾을 수 있도록 도와주었습니다. [(PR)](https://github.com/vercel/next.js/discussions/41319#discussioncomment-4754810)
+
+![solution](https://github.com/hyjoong/quiz-app/assets/70426440/b3d76aa7-a56c-43d0-9031-d11371d03d16)
+
+> # 참고 자료
+
+- [Nivo pie chart 테스트 코드 작성 PR](https://github.com/plouc/nivo/pull/2338)
+- [Next.js Discussion 해결방법 공유](https://github.com/vercel/next.js/discussions/41319#discussioncomment-4754810)

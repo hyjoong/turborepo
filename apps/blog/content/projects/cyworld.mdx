@@ -1,0 +1,108 @@
+---
+title: 싸이월드
+description: 싸이월드 프로젝트
+date: 2022-10 ~ 2022-10
+skills: ["Next.js", "Typescript", "GraphQL"]
+thumbnail: images/thumbnail/cyworld.png
+repository: https://github.com/hyjoong/cyworld
+team: 개인 프로젝트 (프론트 1명)
+published: true
+---
+
+> # 프로젝트 소개
+
+이 프로젝트는 넘블에서 주관한 싸이월드 구현하기 프로젝트로, [코드캠프](https://codebootcamp.co.kr/)에서 제공한 API와 디자인을 활용하여 싸이월드 홈페이지를 구현했습니다. 총 30명 정도의 참가자가 있었으며 프로젝트 결과 2등에 선정되어 코드 리뷰도 받을 수 있었습니다.
+
+이 프로젝트를 통해 기업에서 요구하는 사항만 구현하는 것이 아니라 기획적으로도 많은 것을 시도해 보며 실력을 길렀습니다. 기본적으로 구현해야 할 주요 페이지는 메인 페이지, 게임 페이지, 다이어리 리스트, 다이어리 상세 페이지, 다이어리 작성 페이지였지만, 추가적으로 `N`배지 표시 기능, 방명록 페이지, 페이지 네이션, 프로필 페이지를 구현하면서 사용자 경험을 개선하고 프로젝트를 더 완성도 있게 만들었습니다.
+
+![](https://velog.velcdn.com/images/hyunjoong/post/2170c962-311a-44f0-b72c-f5eb4123957c/image.png)
+
+![](https://velog.velcdn.com/images/hyunjoong/post/70020abb-b8dc-400b-964f-76473c9b9d55/image.png)
+
+![](https://velog.velcdn.com/images/hyunjoong/post/f36bcfab-2e54-4bac-bfb4-31868702cfdf/image.png)
+
+> # 프로젝트 진행 과정
+
+프로젝트는 기본적인 레이아웃과 게시판 CRUD 기능 구현으로 시작되어, 주어진 프로젝트 기간은 3주였으며, 빠르게 기능을 완성한 후 디스코드 질문 게시판에 추가적인 기능 구현을 해도 되는지 질문을 남기고 답변을 받았다.
+
+> Q. 요구사항에서 추가로 기능을 구현해서 제공한 피그마와 디자인이 달라지면 평가에서 마이너스가 있을까요?
+
+![](https://velog.velcdn.com/images/hyunjoong/post/8e8e8c3c-f1c7-43be-93d0-8124484cd6f6/image.png)
+
+답변을 참고하여 싸이월드 앱을 설치해 기능을 분석하고, GraphQL Playground에서 제공되는 쿼리들을 확인하여 프로젝트에 어떤 기능을 추가할 수 있을지 찾아봤다.
+
+![graphql playground](https://velog.velcdn.com/images/hyunjoong/post/7aed88e9-8b33-42c6-afe6-162bce989ee0/image.png)
+
+> # 추가 구현 기능
+
+## 1. 새로운 게시글 표시 기능
+
+현재 싸이월드 앱에서는 게시글을 `새로 작성된 글/ 총 게시글` 형식으로 표시하고, 새로 작성된 글이 있으면 옆에 `N` 배지를 표시한다.
+
+![](https://velog.velcdn.com/images/hyunjoong/post/5ebb2b36-c5b3-4606-bbb0-a201e5da241e/image.png)
+![](https://velog.velcdn.com/images/hyunjoong/post/d834012b-7ce5-4163-97ec-4e05f0aee5f8/image.png)
+
+싸이월드 앱은 7일 이내로 작성된 게시글이면 `N` 배지가 나타나는데 프로젝트 기간 동안 많은 게시글이 작성될 것을 고려해서 24시간 이내 작성된 게시글에 `N` 배지를 표시하도록 구현하였다.
+
+![](https://velog.velcdn.com/images/hyunjoong/post/44f5c882-2b02-43fd-a7c2-5747e798d862/image.png)
+
+![](https://velog.velcdn.com/images/hyunjoong/post/a523b7d3-9a05-40be-ad2a-6e1b61ad8edd/image.png)
+
+![](https://velog.velcdn.com/images/hyunjoong/post/b3e0b561-d531-462e-9ee4-58785e436e6c/image.png)
+
+![](https://velog.velcdn.com/images/hyunjoong/post/9ce663ec-80fe-40bf-bdc6-6ab29a9e6598/image.png)
+
+## 2. 방명록 페이지 구현
+
+Product 관련 쿼리를 활용하여 필요한 정보(name, detail, createdAt)만 추출해 방명록 페이지를 구성하였다.
+
+![product query](https://velog.velcdn.com/images/hyunjoong/post/fed8fc95-34ca-47fa-8fef-7b35fc4f677a/image.png)
+
+![](https://velog.velcdn.com/images/hyunjoong/post/c2c17869-6184-4e8b-859a-eb919888ad4e/image.png)
+
+## 3. 페이지 네이션 구현 ([PR](https://github.com/hyjoong/cyworld/pull/11))
+
+![](https://velog.velcdn.com/images/hyunjoong/post/30308fb9-398e-4aeb-a6c9-3052f6254bb1/image.png)
+
+피그마에는 페이지 네이션 구현 요구가 없었지만, 기본적으로 필요한 기능이라 판단하여 구현을 했다. 다이어리 페이지와 방명록 페이지에서 공통으로 사용 가능한 `Pagination` 컴포넌트와 `usePagination` 커스텀 훅을 작성했다.
+
+```javascript
+// usePagination.ts
+
+  const isEndPage: boolean =
+    totalCount - ((beforePage - 1) * defaultSize + defaultSize) <= 0;
+
+
+  const handlePrevPage = (): void => {
+    if (beforePage === 1) {
+      return;
+    }
+    setPage(beforePage - 1);
+    router.push(`${router.pathname}?page=${beforePage - 1}`);
+  };
+
+  const handleNextPage = (): void => {
+    setPage(beforePage + 1);
+    router.push(`${router.pathname}?page=${beforePage + 1}`);
+  };
+
+  return [page, isEndPage, handlePrevPage, handleNextPage] as const;
+};
+
+```
+
+## 4. 프로필 페이지 구현
+
+요구사항에는 프로필 정보는 데이터 통신 없이 퍼블리싱만 포함되어 있었지만, Profile 쿼리를 활용하여 프로필 수정 및 조회 기능을 구현했다.
+
+![](https://velog.velcdn.com/images/hyunjoong/post/23bca23b-1ad1-4ed0-8c28-da85dc39646e/image.png)
+
+> # 아쉬운 점
+
+GraphQL Codegen을 사용하여 쿼리 및 타입을 생성했으나, 백엔드에서 Optional 처리가 제대로 되지 않아 불필요한 코드를 많이 작성하게 됐었다. 회사 프로젝트였다면 필수 값과 선택 값을 명확히 구분하고, 필요 시 null 처리를 백엔드 개발자에게 요청할 수 있었겠지만, 이번 프로젝트에서는 api관련해서 요청하는게 어려워서 undefined 처리를 많이 해야 했다.
+
+> # 결과
+
+![](https://velog.velcdn.com/images/hyunjoong/post/0be368cb-e3c1-4e67-9dcb-f0e72ae7e27a/image.png)
+
+- https://thoughtful-arch-8c2.notion.site/Next-js-de387060b67b46a297fbc101592f8cdc

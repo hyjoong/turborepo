@@ -1,0 +1,51 @@
+---
+title: 졸업작품 판매
+description: 졸업작품 판매 프로젝트
+date: 2022-01 ~ 2022-03
+skills: ["React", "Typescript"]
+thumbnail: images/thumbnail/graduation.png
+repository: https://github.com/hyjoong/Front-GraduationWorkSalesProject
+team: 팀 프로젝트 (프론트 1명, 백엔드 3명)
+published: true
+---
+
+> # 프로젝트 소개
+
+백엔드 저장소: https://github.com/GraduationWorkSalesProject/Spring-GraduationWorkSalesProject
+
+이 프로젝트는 졸업작품을 판매하고 구매할 수 있는 프로젝트입니다.
+
+프로젝트의 주요 목적은 협업을 통해 실무 경험을 쌓는 것이었습니다. 프론트엔드는 혼자서 담당했으며, 규칙을 정해서 Github Flow를 적용하고, 여러 백엔드 개발자와 협업하며 프로젝트를 완료했습니다.
+
+프로젝트를 완성한 이후에도 LightHouse를 통해 성능 최적화를 진행하고, Code Splitting, Skeleton UI 등의 기술을 도입하여 사용자 경험을 향상시켰습니다.
+
+> # 데모 영상
+
+![gradu](https://github.com/hyjoong/quiz-app/assets/70426440/78f558e8-83f3-4e63-9a01-a5175e8b15e6)
+
+> # 주요 개선 사항
+
+## 1. 데이터 응답 속도 문제 해결 (콜드 스타트 문제 해결)
+
+백엔드를 Heroku의 무료 플랜으로 배포할 때, 30분 동안 서버가 사용되지 않으면 슬립 상태로 전환되어 첫 요청시 응답 시간이 10초 이상 지연되는 문제가 발생했습니다.
+
+- 이 문제를 해결하고 사용자 경험을 향상시키기 위해 스켈레톤 UI를 도입했습니다 ([PR](https://github.com/hyjoong/Front-GraduationWorkSalesProject/pull/35))
+
+## 2. 초기 로딩 속도 개선
+
+React SPA 방식으로 인해 초기 페이지 로딩 시간이 길어지는 문제가 있었습니다. 이를 해결하기 위해 코드 분할 (Code Splitting)을 적용하였습니다.
+
+- Lazy Loading을 통해 초기 로드시 다운로드되는 자바스크립트 파일 크기를 998KB -> 540KB로 줄였습니다 ([PR](https://github.com/hyjoong/Front-GraduationWorkSalesProject/pull/39))
+
+> # 프로젝트를 통한 학습 및 성장
+
+## 1. 책임감
+
+프로젝트는 원래 프론트엔드 팀원 3명이 시작했으나, 프로젝트 시작 직후 두 명이 바쁜 회사 업무로 인해 떠났습니다. 결국 프론트엔드 개발은 저 혼자서 처음부터 끝까지 담당하게 되었습니다. 이러한 상황에서도 퇴근 후와 주말을 활용해 책임감 있게 프로젝트를 완성했습니다.
+
+## 2. Github Flow경험
+
+프로젝트 진행 중 Github Flow를 활용한 이슈 생성, 브랜치 관리, 개발 진행, PR 생성 과정을 경험했습니다.
+
+- [이슈 목록](https://github.com/hyjoong/Front-GraduationWorkSalesProject/issues?q=is%3Aissue+is%3Aclosed)
+- [PR 목록](https://github.com/hyjoong/Front-GraduationWorkSalesProject/pulls?q=is%3Apr+is%3Aclosed)
