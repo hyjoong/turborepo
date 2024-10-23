@@ -1,0 +1,124 @@
+---
+title: Next.js 프로젝트 PWA 구축하기
+description: 요즘 웹 개발에서 PWA(Progressive Web App)은 트렌드로 자리잡고 있다. PWA는 웹과 네이티브 앱의 장점을 결합하여, 오프라인에서도 사용 가능하고, 빠른 로딩 시간, 홈 화면 추가 등 네이티브 앱과 유사한 사용자 경험을 제공한다.
+date: 2024-05-10
+tags: ["Next.js"]
+thumbnail: images/thumbnail/pwa.png
+published: true
+---
+
+> # 들어가며
+
+요즘 웹 개발에서 트렌드로 떠오르고 있는 PWA(Progressive Web App)를 학습하기 위해 Next.js 14버전을 기반으로 하는 니콘내콘 프로젝트에 PWA를 적용하는 과정을 기록해보려 한다.
+
+---
+
+# Next.js 프로젝트에 PWA 적용하기
+
+### 1. next-pwa 라이브러리 설치
+
+Next.js 프로젝트에 PWA 기능을 쉽게 통합할 수 있는 `next-pwa` 라이브러리를 설치한다.
+
+```javascript
+yarn add next-pwa -D
+```
+
+### 2. next.config.js 파일 수정
+
+```javascript
+const withPWA = require("next-pwa")({
+  dest: "public",
+});
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // 기존 Next.js 설정
+};
+
+module.exports = withPWA(nextConfig);
+```
+
+### 3. manifest 파일 생성
+
+웹 앱 manifest는 애플리케이션에 대한 정보를 제공하는 JSON 파일이다. 이 파일에는 앱 이름, 시작URL, 아이콘, 배경 색상 등이 포함된다.
+
+manifest는 아래 링크에서 쉽게 작성할 수 있다.
+https://www.simicart.com/manifest-generator.html
+
+```javascript
+{
+  "name": "니콘내콘",
+  "short_name": "니콘내콘",
+  "description": "니콘내콘에서 기프티콘을 구매하세요",
+  "theme_color": "#ffc211",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/assets/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    // 추가 아이콘 정보들
+  ],
+}
+
+```
+
+### 4. IOS 스플래시 메타태그
+
+next.js 14버전부터는 themeColor 속성은 metadata에서 사용할 수 없어서 **viewport**에서 사용해야 한다.
+
+참고: https://nextjs.org/docs/app/api-reference/functions/generate-metadata#themecolor
+
+스플래시 이미지는 여기서 생성할 수 있다.
+https://appsco.pe/developer/splash-screens
+
+```javascript
+export const viewport = {
+  themeColor: "#ffffff",
+};
+
+export const metadata: Metadata = {
+  title: "니콘내콘",
+  description:
+    "기프티콘 판매 및 구매 1위 플랫폼, 스타벅스 기프티콘부터 모바일상품권까지 일상에서의 할인을 받아보세요.",
+  manifest: "/manifest.json",
+  viewport:
+    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
+  icons: [
+    { rel: "icon", url: "/assets/logo-192x192.png", sizes: "192x192" },
+    // 추가 아이콘 정보
+  ],
+};
+```
+
+### 5. 빌드 및 테스트
+
+PWA 기능이 정상적으로 작동하는지 확인하기 위해 빌드와 테스트를 진행한다.
+
+```javascript
+yarn build && yarn start
+```
+
+Lighthouse를 사용하여 PWA 기준에 부합하는지 검사할 수 있다
+
+![](https://velog.velcdn.com/images/hyunjoong/post/4fe7a64a-a2fa-4cd3-ba8d-ce1102c2a14a/image.png)
+
+# 설치방법
+
+### 1. 데스크탑
+
+![](https://velog.velcdn.com/images/hyunjoong/post/4532a290-e1b0-4281-8b7b-4d952d75a3e5/image.png)
+
+### 2. 아이폰
+
+![](https://velog.velcdn.com/images/hyunjoong/post/3dc758e6-9f55-470e-a107-86740ef90367/image.png)
+
+# 참고 자료
+
+- [LearnPWA](https://web.dev/learn/pwa)
+- [니콘내콘 PWA 적용 PR](https://github.com/hyjoong/ncnc/pull/21)
