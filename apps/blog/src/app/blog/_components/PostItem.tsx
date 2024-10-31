@@ -1,7 +1,9 @@
-import Link from "next/link";
-import { cn, formatDate } from "@/lib/utils";
-import Tag from "@/components/ui/Tag";
-import { buttonVariants } from "@ui/components/ui/button";
+import Link from 'next/link';
+
+import { buttonVariants } from '@ui/components/ui/button';
+
+import Tag from '@/components/ui/Tag';
+import { cn, formatDate } from '@/lib/utils';
 
 interface PostItemProps {
   slug: string;
@@ -46,7 +48,7 @@ const PostItem = ({
               </dl>
               <Link
                 href={slug}
-                className={cn(buttonVariants({ variant: "link" }), "py-0")}
+                className={cn(buttonVariants({ variant: 'link' }), 'py-0')}
               ></Link>
             </div>
           </div>

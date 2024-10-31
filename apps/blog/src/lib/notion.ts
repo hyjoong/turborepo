@@ -1,5 +1,5 @@
-import { DATABASE_ID } from "@/constants/env";
-import { notionClientInstance } from "@/lib/notionClient";
+import { DATABASE_ID } from '@/constants/env';
+import { notionClientInstance } from '@/lib/notionClient';
 // import { NotionPage, NotionResponse } from "@/app/types/notion";
 // import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
@@ -8,7 +8,7 @@ export const getDataByCategory = async (
   targetString: string
 ) => {
   const response = await notionClientInstance.databases.query({
-    database_id: DATABASE_ID ?? "",
+    database_id: DATABASE_ID ?? '',
     filter: {
       select: {
         equals: targetString,
@@ -26,7 +26,7 @@ const extractPlainText = (data: any[]) => {
     const id = item.id;
     // const slugText = item.properties.slug.rich_text?.[0]?.plain_text || "";
     const slug = item.public_url;
-    const titleText = item.properties.title.title?.[0]?.plain_text || "";
+    const titleText = item.properties.title.title?.[0]?.plain_text || '';
     return { id: id, slug: slug, title: titleText };
   });
 };

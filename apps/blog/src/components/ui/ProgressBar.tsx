@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
 const ProgressBar = () => {
   const [progress, setProgress] = useState(0);
@@ -18,9 +18,9 @@ const ProgressBar = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, true);
+    window.addEventListener('scroll', handleScroll, true);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [handleScroll]);
 

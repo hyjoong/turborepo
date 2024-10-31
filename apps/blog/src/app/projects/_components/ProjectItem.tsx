@@ -1,6 +1,7 @@
-import Tag from "@/components/ui/Tag";
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
+
+import Tag from '@/components/ui/Tag';
 
 interface ProjectItemProps {
   title: string;
@@ -22,7 +23,7 @@ const ProjectItem = ({
       <div>
         <Link href={`/${slug}`}>
           <Image
-            src={`/${thumbnail}` || ""}
+            src={`/${thumbnail}` || ''}
             width={500}
             height={400}
             className='object-cover object-center w-full h-56 sm:h-40 lg:h-60'

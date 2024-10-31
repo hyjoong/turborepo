@@ -1,8 +1,9 @@
-import Link from "next/link";
-import MainNav from "./MainNav";
-import MobileNav from "./MobileNav";
-import Logo from "../Icons/Logo";
-import ThemeToggle from "@/components/ui/ThemeToggle";
+import Link from 'next/link';
+
+import MainNav from './MainNav';
+import MobileNav from './MobileNav';
+import Logo from '../Icons/Logo';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 
 const GNB = () => {
   return (

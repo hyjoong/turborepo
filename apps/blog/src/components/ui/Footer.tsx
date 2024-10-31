@@ -1,8 +1,9 @@
-import Link from "next/link";
-import { siteConfig } from "@/config/site";
-import Github from "@/components/Icons/Github";
-import Linkedin from "@/components/Icons/Linkedin";
-import Mail from "@/components/Icons/Mail";
+import Link from 'next/link';
+
+import Github from '@/components/Icons/Github';
+import Linkedin from '@/components/Icons/Linkedin';
+import Mail from '@/components/Icons/Mail';
+import { siteConfig } from '@/config/site';
 
 const Footer = () => {
   return (

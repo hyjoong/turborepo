@@ -1,7 +1,7 @@
-import { posts } from "#site/content";
-import PostItem from "@/app/blog/_components/PostItem";
-import Tag from "@/components/ui/Tag";
-import { getAllTags, sortPostsByDate, sortTagsByCount } from "@/lib/utils";
+import { posts } from '#site/content';
+import PostItem from '@/app/blog/_components/PostItem';
+import Tag from '@/components/ui/Tag';
+import { getAllTags, sortPostsByDate, sortTagsByCount } from '@/lib/utils';
 
 interface BlogPageProps {
   searchParams: {

@@ -1,5 +1,6 @@
-import Image from "next/image";
-import * as runtime from "react/jsx-runtime";
+import Image from 'next/image';
+
+import * as runtime from 'react/jsx-runtime';
 
 const useMDXComponents = (code: string) => {
   const codeFunction = new Function(code);

@@ -1,12 +1,14 @@
-import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { projects } from "#site/content";
-import { Calendar, User } from "lucide-react";
-import MDXContent from "@/components/common/mdx-component";
-import Github from "@/components/Icons/Github";
-import ProgressBar from "@/components/ui/ProgressBar";
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+
+import { Calendar, User } from 'lucide-react';
+import { Metadata } from 'next';
+
+import { projects } from '#site/content';
+import MDXContent from '@/components/common/mdx-component';
+import Github from '@/components/Icons/Github';
+import ProgressBar from '@/components/ui/ProgressBar';
 
 interface ProjectPageProps {
   params: {
@@ -14,8 +16,8 @@ interface ProjectPageProps {
   };
 }
 
-const getProject = (params: ProjectPageProps["params"]) => {
-  const slug = params?.slug.join("/");
+const getProject = (params: ProjectPageProps['params']) => {
+  const slug = params?.slug.join('/');
   return projects.find((project) => project.slugAsParams === slug);
 };
 
@@ -34,7 +36,7 @@ export const generateMetadata = async ({
     openGraph: {
       title: project.title,
       description: project.description,
-      type: "article",
+      type: 'article',
       url: project.slug,
       images: [
         {

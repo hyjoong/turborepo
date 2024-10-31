@@ -1,24 +1,26 @@
-import { posts } from "#site/content";
-import { notFound } from "next/navigation";
-import { Metadata } from "next";
-import { Calendar, Clock3 } from "lucide-react";
-import readingTime from "reading-time";
-import { siteConfig } from "@/config/site";
-import { formatDate } from "@/lib/utils";
-import Tag from "@/components/ui/Tag";
-import MDXContent from "@/components/common/mdx-component";
-import Giscus from "@/components/common/Giscus";
-import ProgressBar from "@/components/ui/ProgressBar";
-import "@/styles/mdx.css";
-import { BlogBreadCrumb } from "@/app/blog/[...slug]/_components/BlogBreadCrumb";
+import { notFound } from 'next/navigation';
+
+import { Calendar, Clock3 } from 'lucide-react';
+import { Metadata } from 'next';
+import readingTime from 'reading-time';
+
+import { posts } from '#site/content';
+import { BlogBreadCrumb } from '@/app/blog/[...slug]/_components/BlogBreadCrumb';
+import Giscus from '@/components/common/Giscus';
+import MDXContent from '@/components/common/mdx-component';
+import ProgressBar from '@/components/ui/ProgressBar';
+import Tag from '@/components/ui/Tag';
+import { siteConfig } from '@/config/site';
+import '@/styles/mdx.css';
+import { formatDate } from '@/lib/utils';
 
 interface PostPageProps {
   params: {
     slug: string[];
   };
 }
-const getPost = async (params: PostPageProps["params"]) => {
-  const slug = params?.slug.join("/");
+const getPost = async (params: PostPageProps['params']) => {
+  const slug = params?.slug.join('/');
   const post = posts.find((post) => post.slugAsParams === slug);
   return post;
 };
@@ -33,8 +35,8 @@ export const generateMetadata = async ({
   }
 
   const ogSearchParams = new URLSearchParams();
-  ogSearchParams.set("title", post.title);
-  ogSearchParams.set("description", post.description ?? "");
+  ogSearchParams.set('title', post.title);
+  ogSearchParams.set('description', post.description ?? '');
 
   const thumbnailUrl = post.thumbnail
     ? `https://hyjoong.com/${post.thumbnail}`
@@ -49,7 +51,7 @@ export const generateMetadata = async ({
     openGraph: {
       title: post.title,
       description: post.description,
-      type: "article",
+      type: 'article',
       url: post.slug,
       images: [
         {
@@ -61,7 +63,7 @@ export const generateMetadata = async ({
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title: post.title,
       description: post.description,
       images: [thumbnailUrl],

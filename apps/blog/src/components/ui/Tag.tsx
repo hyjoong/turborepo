@@ -1,5 +1,6 @@
-import Link from "next/link";
-import { badgeVariants } from "./badge";
+import Link from 'next/link';
+
+import { badgeVariants } from '@ui/components/ui/badge';
 
 interface TagProps {
   tag: string;
@@ -11,8 +12,8 @@ const Tag = ({ tag, isActive, count }: TagProps) => {
   return (
     <Link
       className={badgeVariants({
-        variant: isActive ? "default" : "secondary",
-        className: "no-underline rounded-md",
+        variant: isActive ? 'default' : 'secondary',
+        className: 'no-underline rounded-md',
       })}
       href={`?tag=${tag}`}
     >

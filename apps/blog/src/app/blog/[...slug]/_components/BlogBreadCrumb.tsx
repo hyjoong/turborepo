@@ -4,7 +4,7 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@ui/components/ui/breadcrumb";
+} from '@ui/components/ui/breadcrumb';
 
 interface BlogBreadCrumbProps {
   title: string;

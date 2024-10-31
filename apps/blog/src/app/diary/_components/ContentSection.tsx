@@ -1,14 +1,16 @@
-import { getAndFormatNotionData, getDataByCategory } from "@/lib/notion";
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+
+import React from 'react';
+
+import { getAndFormatNotionData } from '@/lib/notion';
 
 interface ContentSectionProps {
   title: string;
-  category: "troubleshooting" | "retrospective";
+  category: 'troubleshooting' | 'retrospective';
 }
 
 const ContentSection = async ({ title, category }: ContentSectionProps) => {
-  const notionData = await getAndFormatNotionData("type", category);
+  const notionData = await getAndFormatNotionData('type', category);
   // TODO: 데이터 없을경우 처리
   if (notionData.length === 0) {
     return <div>데이터가 없습니다.</div>;

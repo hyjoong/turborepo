@@ -1,5 +1,5 @@
-import type { Config } from "tailwindcss";
-import baseConfig from "@repo/ui/tailwind.config";
+import baseConfig from '@repo/ui/tailwind.config';
+import type { Config } from 'tailwindcss';
 
 const webConfig = {
   ...baseConfig,
@@ -9,16 +9,16 @@ const webConfig = {
     extend: {
       ...(baseConfig.theme?.extend || {}),
       fontFamily: {
-        pretendard: ["Pretendard"],
+        pretendard: ['Pretendard'],
       },
       typography: {
         DEFAULT: {
           css: {
             blockquote: {
-              borderLeftColor: "#3B82F6",
-              backgroundColor: "#EDEDED",
-              "h1, h2, h3, h4, p": {
-                padding: "0.5rem 0.5rem 0.5rem 0",
+              borderLeftColor: '#3B82F6',
+              backgroundColor: '#EDEDED',
+              'h1, h2, h3, h4, p': {
+                padding: '0.5rem 0.5rem 0.5rem 0',
               },
             },
           },
@@ -26,14 +26,14 @@ const webConfig = {
         invert: {
           css: {
             blockquote: {
-              backgroundColor: "#363636",
+              backgroundColor: '#363636',
             },
           },
         },
       },
     },
   },
-  plugins: [...(baseConfig.plugins || []), require("@tailwindcss/typography")],
+  plugins: [...(baseConfig.plugins || []), require('@tailwindcss/typography')],
 } satisfies Config;
 
 export default webConfig;

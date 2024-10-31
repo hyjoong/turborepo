@@ -1,5 +1,6 @@
-import { NOTION_API_KEY } from "@/constants/env";
-import { Client } from "@notionhq/client";
+import { Client } from '@notionhq/client';
+
+import { NOTION_API_KEY } from '@/constants/env';
 
 const createNotionClientInstance = () => {
   return new Client({

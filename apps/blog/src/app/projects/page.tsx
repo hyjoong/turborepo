@@ -1,5 +1,5 @@
-import { projects } from "#site/content";
-import ProjectItem from "@/app/projects/_components/ProjectItem";
+import { projects } from '#site/content';
+import ProjectItem from '@/app/projects/_components/ProjectItem';
 
 export default function Project() {
   const sortedProject = projects.filter((project) => project.published);

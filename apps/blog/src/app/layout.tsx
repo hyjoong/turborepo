@@ -1,15 +1,17 @@
-import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { cn } from "@/lib/utils";
-import GNB from "@/components/GNB/GNB";
-import ThemeProviders from "@/components/providers/ThemeProviders";
-import "./globals.css";
-import { siteConfig } from "@/config/site";
-import Footer from "@/components/ui/Footer";
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import type { Metadata, Viewport } from 'next';
+
+import GNB from '@/components/GNB/GNB';
+import ThemeProviders from '@/components/providers/ThemeProviders';
+import Footer from '@/components/ui/Footer';
+import { siteConfig } from '@/config/site';
+import { cn } from '@/lib/utils';
+import '@ui/globals.css';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: siteConfig.name,
@@ -19,10 +21,10 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     {
-      media: "(prefers-color-scheme: dark)",
-      color: "#000000",
+      media: '(prefers-color-scheme: dark)',
+      color: '#000000',
     },
   ],
 };
@@ -36,7 +38,7 @@ export default function RootLayout({
     <html lang='ko' className='scroll-pt-[3.5rem]'>
       <body
         className={cn(
-          "min-h-screen bg-background font-pretendard antialiased",
+          'min-h-screen bg-background font-pretendard antialiased',
           inter.variable
         )}
       >

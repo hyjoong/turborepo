@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { ThemeProvider } from "next-themes";
-import { useEffect, useState } from "react";
+import { ThemeProvider } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const ThemeProviders = ({ children }: { children: React.ReactNode }) => {
   const [isMount, setMount] = useState(false);
