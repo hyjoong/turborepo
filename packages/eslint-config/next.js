@@ -30,6 +30,14 @@ module.exports = {
     },
   },
   rules: {
+    quotes: [
+      "warn",
+      "single",
+      {
+        avoidEscape: true,
+        allowTemplateLiterals: true,
+      },
+    ],
     "import/order": [
       "warn",
       {
