@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn, formatDate } from "@/lib/utils";
 import Tag from "@/components/ui/Tag";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@ui/components/ui/button";
 
 interface PostItemProps {
   slug: string;
