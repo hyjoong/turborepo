@@ -1,9 +1,9 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { buttonVariants } from '@ui/components/ui/button';
+import { buttonVariants } from "@ui/components/ui/button";
 
-import Tag from '@/components/ui/Tag';
-import { cn, formatDate } from '@/lib/utils';
+import Tag from "@/components/ui/Tag";
+import { cn, formatDate } from "@/lib/utils";
 
 interface PostItemProps {
   slug: string;
@@ -22,6 +22,7 @@ const PostItem = ({
   tags,
   thumbnail,
 }: PostItemProps) => {
+  // SS
   return (
     <Link href={slug}>
       <article className='flex flex-col-reverse sm:flex-row justify-between gap-2 border p-4 rounded-md hover:border-primary transition-all duration-300 shadow-md'>
@@ -36,9 +37,7 @@ const PostItem = ({
           </div>
           <div>
             <div className='flex gap-2 mt-2'>
-              {tags?.map((tag) => (
-                <Tag key={tag} tag={tag} />
-              ))}
+              {tags?.map((tag) => <Tag key={tag} tag={tag} />)}
             </div>
             <div className='flex justify-between items-end'>
               <dl>
@@ -48,7 +47,7 @@ const PostItem = ({
               </dl>
               <Link
                 href={slug}
-                className={cn(buttonVariants({ variant: 'link' }), 'py-0')}
+                className={cn(buttonVariants({ variant: "link" }), "py-0")}
               ></Link>
             </div>
           </div>
