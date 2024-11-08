@@ -13,6 +13,11 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "blog#build": {
+      "dependsOn": ["packages/ui#build"],
+      "inputs": ["apps/blog/**"],
+      "outputs": [".next/**"]
     }
   }
 }
