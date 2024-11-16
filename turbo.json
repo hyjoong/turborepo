@@ -14,9 +14,14 @@
       "cache": false,
       "persistent": true
     },
-    "blog#build": {
-      "dependsOn": ["packages/ui#build"],
-      "inputs": ["apps/blog/**"],
+    "apps/blog#build": {
+      "dependsOn": ["@repo/ui#build"],
+      "inputs": [
+        "apps/blog/**",
+        "packages/ui/**",
+        "packages/typescript-config/base.json",
+        "packages/eslint-config/**"
+      ],
       "outputs": [".next/**"]
     }
   }
