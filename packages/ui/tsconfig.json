@@ -6,6 +6,6 @@
       "@ui/*": ["./src/*"]
     }
   },
-  "include": ["."],
+  "include": [".", "../../apps/task/src/features/auth/components/dotted-separator.tsx"],
   "exclude": ["node_modules"]
 }

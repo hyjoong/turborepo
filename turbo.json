@@ -23,6 +23,11 @@
         "packages/eslint-config/**"
       ],
       "outputs": [".next/**"]
+    },
+    "apps/storybook#build": {
+      "dependsOn": ["@repo/ui#build"],
+      "inputs": ["apps/storybook/**", "packages/ui/**"],
+      "outputs": ["storybook-static/**"]
     }
   }
 }
