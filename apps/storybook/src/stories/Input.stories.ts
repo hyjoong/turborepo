@@ -10,10 +10,30 @@ const meta = {
       control: "select",
       options: ["text", "password", "email", "number", "search", "tel", "url"],
       defaultValue: "text",
+      description: "입력 필드의 타입을 지정합니다.",
     },
-    placeholder: { control: "text" },
-    disabled: { control: "boolean" },
-    required: { control: "boolean" },
+    placeholder: {
+      control: "text",
+      description: "입력 필드의 placeholder 텍스트를 지정합니다.",
+    },
+    disabled: {
+      control: "boolean",
+      description: "입력 필드의 비활성화 여부를 지정합니다.",
+    },
+    required: {
+      control: "boolean",
+      description: "필수 입력 필드 여부를 지정합니다.",
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: `
+Input 컴포넌트는 사용자로부터 다양한 유형의 입력을 받을 수 있는 기본적인 폼 요소입니다.
+- 다양한 input 타입 지원 (text, password, email, number, search, tel, url) 
+        `,
+      },
+    },
   },
 } satisfies Meta<typeof Input>;
 
