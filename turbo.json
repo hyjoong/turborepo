@@ -13,7 +13,11 @@
       "persistent": true
     },
     "apps/blog#build": {
-      "dependsOn": ["@repo/ui#build"],
+      "dependsOn": [
+        "@repo/ui#build",
+        "@repo/typescript-config#build",
+        "@repo/eslint-config#build"
+      ],
       "inputs": [
         "apps/blog/**",
         "packages/ui/**",
