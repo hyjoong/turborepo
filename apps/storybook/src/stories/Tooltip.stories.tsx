@@ -14,7 +14,10 @@ const meta = {
   decorators: [
     (Story) => (
       <TooltipProvider>
-        <Story />
+        {/* 중앙 정렬 좌우 상하 */}
+        <div className='flex justify-center items-center h-screen'>
+          <Story />
+        </div>
       </TooltipProvider>
     ),
   ],
@@ -51,7 +54,23 @@ export const WithDelay: Story = {
 
 export const Positions: Story = {
   render: () => (
-    <div className='flex gap-4'>
+    <div className='flex gap-8'>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button variant='outline'>Left</Button>
+        </TooltipTrigger>
+        <TooltipContent side='left'>
+          <p>Left tooltip</p>
+        </TooltipContent>
+      </Tooltip>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button variant='outline'>Top</Button>
+        </TooltipTrigger>
+        <TooltipContent side='top'>
+          <p>Top tooltip</p>
+        </TooltipContent>
+      </Tooltip>
       <Tooltip>
         <TooltipTrigger asChild>
           <Button variant='outline'>Bottom</Button>
